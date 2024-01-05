@@ -1,3 +1,5 @@
+STEP 1 : GIT
+
 Intstall github in your system
 Create a github repository in https://github.com.
 
@@ -13,6 +15,7 @@ To configure the remote repository from the github.com with our local project, w
 >git remote add origin https://github.com/skjena-wd/namaste-react.git  //Adding Remote, to set up our local to the remote git repo
 >git push origin main	//it will ask u to sign in if it is not done earlier. 
 
+==============================================================================================================
 //1. writing html using JavaScript
 <div id="root"></div>
 <script>
@@ -55,3 +58,38 @@ To configure the remote repository from the github.com with our local project, w
 
 --style.css
 #heading {  color: red; }    
+
+=================================================================================================================
+STEP 2:  NPM
+>npm init	//Configure your project with the packages and other requirements. It will ask u following things
+	--package name : (namaste-react)
+	--version: (1.0.0)
+	--description:  This is Namaste React by skjena-wd
+	--entry point: (app.js)
+	--test command: jest
+	--git repository: (https://github.com/skjena-wd/namaste-react)
+	--keyworkds: 
+	--author: SKJena
+	--license: (ISC)
+//It will create a file package.json.  This package.json is configuration file for our project.  Packages are also called dependencies.  NPM takes care of the dependencies and the versions.  We can add packages or dependencies to our project.
+
+Our whole code needs to be cleaned, minified, bundled before to be used in production.  So, we use bundler for doing these activities.  Bundlers : webpack, parcel, vite are bundler packages.
+===================================================================================================================
+
+STEP 3: Parcel
+>npm install parcel -D parcel       //Install parcel bundler as dev dependency (-D stands for Dev dependencies)
+
+dev dependencies : we require dependencies which is only used while developing the project
+normal dependencies
+
+^ vs ~ : ^ updates the package to the latest minor versions, but ~ will update the pkg to the major versions.
+===================================================================================================================
+
+--package-lock.json : package.json is the config file of project which tracks all versions of ur package.  package-lock.json keeps the track of exact version that is being installed.
+--node-modules - Collection of dependencies.  It fetches all the codes and files of all the dependencies into our system so that we can use them.  When we install parcel Bundler, it installs the parcel as well as all other dependencies required for the parcel.  Parcel uses babel.  This folder need not go into the github.  
+--.gitignore : Contains all the files, which need not to be tracked and pushed into github.  nodue_modules folder should not go to the github as it is very large can be recreated.  The best practice is to ignore by writing it (/node_modules) in .gitignore.  
+--package.json and package-lock.json both the files need to be in the github bcoz it has all the information and log of the versions and exact versions of the dependencies.  So, it is very crucial to have package-lock.json.  
+--If we have package and package-lock.json, we can regenerate the node_modules by (>npm install).
+
+
+
