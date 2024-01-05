@@ -1,0 +1,43 @@
+
+//1. writing html using JavaScript
+<div id="root"></div>
+<script>
+    const heading = document.createElement("h1");
+    heading.innerHTML="Hello World from JavaScript";
+
+    const root = document.getElementById("root");
+    root.appendChild(heading);
+</script>
+
+//2.  
+--index.html
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>    
+    <link rel="stylesheet" href="style.css">
+    <div id="root"></div>    
+    <script src="app.js"></script>
+
+--app.js
+    const parent = React.createElement(
+        "div", 
+        {id:"parent"}, 
+        React.createElement(
+            "div", 
+            {id:"child"}, [
+                React.createElement("h1", {}, "I am H1 tag"),
+                React.createElement("h2", {}, "I am H2 tag")
+        ])
+    );
+
+    const heading = React.createElement(
+        "h1", 
+        {id:"heading"}, 
+        "Hello World from React!"
+    );  //Create heading object
+
+    console.log(heading);
+    const root = ReactDOM.createRoot(document.getElementById("root"));  //create Root inside React for our project
+    root.render(parent);   //injecting heading object into the root, render method is taking the object and push into root
+
+--style.css
+#heading {  color: red; }    
