@@ -1,3 +1,17 @@
+Intstall github in your system
+Create a github repository in https://github.com.
+
+Connect our system to github.
+>git config --global user.email "you@example.com"
+>git config --global user.name "skjena-wd"
+
+To configure the remote repository from the github.com with our local project, we have to make our project as a local repository.
+>git init	//Command in local project VS Code terminal to create a repository for our project.
+>git branch -M main	//create a main branch as main
+>git add .	//Add all the files to be added into the branch b4 pushing all the codes to the remote
+>git commit -m "episode-01"
+>git remote add origin https://github.com/skjena-wd/namaste-react.git  //Adding Remote, to set up our local to the remote git repo
+>git push origin main	//it will ask u to sign in if it is not done earlier. 
 
 //1. writing html using JavaScript
 <div id="root"></div>
